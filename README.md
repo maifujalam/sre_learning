@@ -1,6 +1,6 @@
 SRE Learning with Hands-on Labs
 ======================
-Topics:-
+## Topics:-
 - Linux Fundamentals
 - Networking Basics
 - System Monitoring and Logging
@@ -21,14 +21,17 @@ Topics:-
 - Hands-on Labs and Projects
 - Additional Resources and References
 
-1. Linux Fundamentals
+## 1. Linux Fundamentals
+
 -----------------
-A. Creating and managing Virtual Machines using VirtualBox and Vagrant in Local System.
+### A. Creating and managing Virtual Machines using VirtualBox and Vagrant in Local System.
   - Install VirtualBox and Vagrant.
   - Clone Vagrantfile's from GitHub repository.
   - Start and access VMs using Vagrant commands.
   - Destroy VMs when not needed.
-B. Basic Linux commands and file system navigation.
+
+### B. Basic Linux commands and file system navigation.
+
   - File and directory management (ls, cd, mkdir, rm, mv, cp).
   - File permissions and ownership (chmod, chown).
   - Text file manipulation (cat, less, grep, awk, sed).
