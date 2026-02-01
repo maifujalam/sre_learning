@@ -16,7 +16,7 @@ Configure the VM
     c. To change to number of additional disks to 2. Make:-  **ADDITIONAL_DISK_COUNT = 2**  
     d. To change the each additional disk size to 3GB. Make:-  **ADDITIONAL_DISK_SIZE = "3GB"**  
     e. To change the private vm network IP address to. Make:-  **NETWORK_IP = 192.168.1.5**"
-    f. The VM is created with default disk of 64GB.There is no option to change the default disk size as of now.
+    . The VM is created with default disk of 64GB.There is no option to change the default disk size as of now.
         This is virtual size and will be growing up to 64GB on demand.
     g. Additional OS cab be chosen from below for APPLE M-series CPU and Virtual Box provider.
        https://portal.cloud.hashicorp.com/vagrant/discover?architectures=arm64&providers=virtualbox
