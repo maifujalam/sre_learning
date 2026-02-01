@@ -1,5 +1,6 @@
 BOX_NAME = "bento/ubuntu-24.04"
 BOX_VERSION = "202510.26.0"
+VM_NAME = "my-server"
 CPU_COUNT = 2
 MEMORY_SIZE = "2048"
 NETWORK_IP = "192.168.0.2"
@@ -7,19 +8,36 @@ ADDITIONAL_DISK_COUNT = 3
 ADDITIONAL_DISK_SIZE = "5GB"
 
 Vagrant.configure("2") do |config|
-  config.vm.network "private_network", ip: NETWORK_IP ,virtualbox__intnet: "mynetwork"
+  # synced folder enabled
+  config.vm.synced_folder ".", "/vagrant", disabled: false
+
+  # private network
+  config.vm.network "private_network", ip: NETWORK_IP, virtualbox__intnet: "mynetwork"
+
+  # disable box update check
   config.vm.box_check_update = false
-  config.vm.define "server" do |s|
+
+  # define VM
+  config.vm.define "#{VM_NAME}-vm" do |s|  # Hare #{VM_NAME}-vm is used as, vagrant will manage the VM as my-server-vm
+    s.vm.hostname = VM_NAME
     s.vm.box = BOX_NAME
     s.vm.box_version = BOX_VERSION
+    # VirtualBox provider settings
     s.vm.provider "virtualbox" do |vb|
       vb.memory = MEMORY_SIZE
       vb.cpus = CPU_COUNT
+      vb.name = "#{VM_NAME}-vm"   # sets the VirtualBox machine name
     end
-    (0..ADDITIONAL_DISK_COUNT).each do |i|
-        s.vm.disk :disk, size: ADDITIONAL_DISK_SIZE, name: "disk-#{i}"
+
+    # attach additional disks
+    (1..ADDITIONAL_DISK_COUNT).each do |i|
+      s.vm.disk :disk, size: ADDITIONAL_DISK_SIZE, name: "disk-#{i}"
     end
-    s.vm.hostname = "server"
+
+    # set hostname inside guest OS
+    s.vm.hostname = VM_NAME
+
+    # provisioning
     s.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update && sudo apt-get upgrade -y
       sudo apt-get install -y build-essential git wget curl vim net-tools htop jq unzip software-properties-common apt-transport-https
