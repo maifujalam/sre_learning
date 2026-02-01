@@ -1,0 +1,46 @@
+IMAGE_NAME = "skmaifujalam/k8s-1.30.4"  # Base image of VM which is vagrant box of RHEL 9 as default. generic/rhel9
+BOX_VERSION = "3"                       # Base image version of above image as, 4.2.16
+VM_NAME = "my-server"
+CPU_COUNT = 2
+MEMORY_SIZE = "2048"
+NETWORK_IP = "192.168.0.2"
+ADDITIONAL_DISK_COUNT = 2
+ADDITIONAL_DISK_SIZE = "5GB"
+
+Vagrant.configure("2") do |config|
+  # synced folder enabled
+  config.vm.synced_folder ".", "/vagrant", disabled: false
+
+  # private network
+  config.vm.network "private_network", ip: NETWORK_IP
+
+  # disable box update check
+  config.vm.box_check_update = false
+
+  # define VM
+  config.vm.define "#{VM_NAME}-vm" do |s|  # Hare #{VM_NAME}-vm is used as, vagrant will manage the VM as my-server-vm
+    s.vm.hostname = VM_NAME
+    s.vm.box = BOX_NAME
+    s.vm.box_version = BOX_VERSION
+    # VirtualBox provider settings
+    s.vm.provider "virtualbox" do |vb|
+      vb.memory = MEMORY_SIZE
+      vb.cpus = CPU_COUNT
+      vb.name = "#{VM_NAME}-vm"   # sets the VirtualBox machine name
+    end
+
+    # attach additional disks
+    (1..ADDITIONAL_DISK_COUNT).each do |i|
+      s.vm.disk :disk, size: ADDITIONAL_DISK_SIZE, name: "disk-#{i}"
+    end
+
+    # set hostname inside guest OS
+    s.vm.hostname = VM_NAME
+
+    # provisioning
+    s.vm.provision "shell", inline: <<-SHELL
+      # sudo apt-get update && sudo apt-get upgrade -y
+      # sudo apt-get install -y build-essential git wget curl vim net-tools htop jq unzip software-properties-common apt-transport-https
+    SHELL
+  end
+end
