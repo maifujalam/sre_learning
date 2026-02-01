@@ -12,10 +12,9 @@ Configure the VM
 1. Edit the Vagrant file to update the Hardware settings as per your requirements.  
    Example:-  
     a. To change the cpu core count to 4.Make:-  **CPU_COUNT = 4**
-    MEMORY_SIZE = "2048"  
-    b. To change the memory size to 4GB.Make:-  **MEMORY_SIZE = "4096"**
-    c. To change to number of additional disks to 2. Make:-  **ADDITIONAL_DISK_COUNT = 2**  
-    d. To change the each additional disk size to 3GB. Make:-  **ADDITIONAL_DISK_SIZE = "3"**  
+    b. To change the memory size to 4GB.Make value sin MB:-  **MEMORY_SIZE = "4096"**
+    c. To change to number of additional disks for worker to 2. Make:-  **ADDITIONAL_DISK_COUNT_WORKER  = 2**  
+    d. To change the each additional disk size to 3GB. Make:-  **ADDITIONAL_DISK_SIZE = "3GB"**  
     e. To change the private vm network IP address to. Make:-  **NETWORK_IP = 192.168.1.10**"
     f. The VM is created with default disk of 64GB.There is no option to change the default disk size as of now.
         This is virtual size and will be growing up to 64GB on demand.
