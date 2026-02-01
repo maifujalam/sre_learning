@@ -46,3 +46,11 @@ Thumbs.db
 #---- Vagrant .gitignore ----
 .vagrant/
 #---- End Vagrant .gitignore ----
+.tmp/
+*.tmp
+tmp
+logs/
+*.log
+*.bak
+*.swp
+#---- End ----
