@@ -4,7 +4,7 @@ VM_NAME = "my-server"
 CPU_COUNT = 2
 MEMORY_SIZE = "2048"
 NETWORK_IP = "192.168.0.2"
-ADDITIONAL_DISK_COUNT = 3
+ADDITIONAL_DISK_COUNT = 2
 ADDITIONAL_DISK_SIZE = "5GB"
 
 Vagrant.configure("2") do |config|
@@ -39,8 +39,8 @@ Vagrant.configure("2") do |config|
 
     # provisioning
     s.vm.provision "shell", inline: <<-SHELL
-      sudo apt-get update && sudo apt-get upgrade -y
-      sudo apt-get install -y build-essential git wget curl vim net-tools htop jq unzip software-properties-common apt-transport-https
+      # sudo apt-get update && sudo apt-get upgrade -y
+      # sudo apt-get install -y build-essential git wget curl vim net-tools htop jq unzip software-properties-common apt-transport-https
     SHELL
   end
 end

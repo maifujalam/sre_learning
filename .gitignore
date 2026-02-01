@@ -43,3 +43,6 @@ terraform.rc
 .DS_Store
 Thumbs.db
 #---- End OS generated files .gitignore ----
+#---- Vagrant .gitignore ----
+.vagrant/
+#---- End Vagrant .gitignore ----
