@@ -9,8 +9,12 @@ Before you begin, ensure you have the following installed on your system:
 Vagrant Autocomplete Installation
 --------------------------------
 To enhance your Vagrant experience, you can install autocomplete for your shell. Follow the steps below:
-1. Open your terminal.
-2. Run the following command to install Vagrant autocomplete:
+1. Open your terminal and vaidate the vagrant and virtual box installation by running:
+   ```sh
+   vagrant --version
+   VBoxManage --version
+   ```
+2. Run the following command to install Vagrant autocomplete [Optional]:
    ```sh
    vagrant autocomplete install
     ```
