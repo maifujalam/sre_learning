@@ -28,7 +28,7 @@ Setting Up the Virtual Machine
        ```sh
        cd VMs/MAC_OS/single_vm/my-server
        ```
-    b. For example, to deploy multi vm on MAC OS, in environment name "ceph-cluster"
+    b. For example, to deploy multi vm on MAC OS, in environment name "dev-environment"
        ```sh
        cd VMs/MAC_OS/multi_vm/ceph-cluster/
        ```
