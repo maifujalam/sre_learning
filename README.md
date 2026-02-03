@@ -25,11 +25,10 @@ SRE Learning with Hands-on Labs
 
 -----------------
 ### A. Creating and managing Virtual Machines using VirtualBox and Vagrant in Local System.
-  - Install VirtualBox and Vagrant.
   - Clone the GitHub repository: 
     git clone https://github.com/maifujalam/sre_learning.git
-  - Start and access VMs using Vagrant commands by following the VMs/README.md file.
-  - Destroy VMs when not needed.
+  - Follow VMs/README.md file for setting up Vagrant and VirtualBox.
+  - Basic Vagrant commands for managing VMs (vagrant up, vagrant halt, vagrant destroy, vagrant ssh, etc.)
 
 ### B. Basic Linux commands and file system navigation.
 
