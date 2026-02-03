@@ -13,6 +13,7 @@ To enhance your Vagrant experience, you can install autocomplete for your shell.
    ```sh
    vagrant --version
    VBoxManage --version
+   virtualbox --version
    ```
 2. Run the following command to install Vagrant autocomplete [Optional]:
    ```sh
