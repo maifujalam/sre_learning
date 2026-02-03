@@ -31,33 +31,62 @@ Setting Up the Virtual Machine
        ```sh
        cd VMs/MAC_OS/multi_vm/ceph-cluster/
        ```
+2. Check the vagrant vm status
+   ```sh
+   vagrant status  
+   ```
+3. Check the vagrant global status
+   ```sh
+   vagrant global-status
+   ```
+4. Start the virtual machine:
+   ```sh
+   vagrant up [ --provision to force provisioning ]
+   ```
 
-2. Initialize the Vagrant environment:
-   ```sh
-   vagrant init
-   ```
-3. Start the virtual machine:
-   ```sh
-   vagrant up
-   ```
-4. SSH into the virtual machine:
-   ```sh
-   vagrant ssh
-   ```
 Managing the Virtual Machine
 --------------------------------
 - To stop the virtual machine:
   ```sh
   vagrant halt
   ```
-- To restart the virtual machine:
+- To restart the virtual machine with the updated Vagrant configuration:
   ```sh
    vagrant reload
+  ```
+-- To hybernate the virtual machine:
+  ```sh
+  vagrant suspend
+  ```
+- To resume the virtual machine from hybernation:
+  ```sh
+  vagrant resume
   ```
 - To destroy the virtual machine:
   ```sh
   vagrant destroy [ -f to force. To destroy a single vm, run: vagrant destroy <vm-name> ]
   ```
+
+Connecting to the Virtual Machine
+--------------------------------
+1. To connect to the virtual machine via vagrant SSH:
+  a. Go to the directory where your Vagrantfile is located.
+  b. Run the following command:
+  ```sh
+  vagrant ssh [ <vm-name> for multi-vm setup ]
+  ```
+2. TO connect with the virtual machine using console:
+  a. Go to VirtualBox GUI
+  b. Select the VM and click on "Show" to open the console window.
+  c. To exit the fromthe control window, use `ctrl`  or `Ctrl + C` or close the window.
+
+3. To ssh into the VM from terminal using VM IP Address.
+   a. Open the terminal and run the following command:
+   ```sh
+   ssh vagrant@<VM_IP_ADDRESS>
+   ```
+   b. When prompted, enter the password: `vagrant`
+
 Additional Resources
 ---------------------
 For more information on using Vagrant and VirtualBox, refer to the following resources:
