@@ -21,7 +21,9 @@ SRE Learning with Hands-on Labs
 - Hands-on Labs and Projects
 - Additional Resources and References
 
-## 1. Linux Fundamentals
+## 1. Linux Fundamentals 
+Linux Administration is a fundamental skill for Site Reliability Engineers (SREs). 
+This section covers the basics of Linux, including command-line usage, file system navigation, and essential commands for managing files and processes.
 
 -----------------
 ### A. Creating and managing Virtual Machines using VirtualBox and Vagrant in Local System.
