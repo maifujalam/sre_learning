@@ -19,7 +19,7 @@ Vagrant Autocomplete Installation
    vagrant autocomplete install
     ```
 3. Default vagrant ssh credential is: vagrant/vagrant [ Only for test env do not use in production ]
-4. To enhance your Vagrant experience, you can install autocomplete for your shell. Follow the steps below:
+4. To enhance your Vagrant experience, you can install autocomplete for your shell. Follow the steps below: [Optional]
     a. For Bash:
         ```sh
         vagrant autocomplete install --shell bash
