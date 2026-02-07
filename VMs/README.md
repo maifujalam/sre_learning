@@ -8,7 +8,6 @@ Before you begin, ensure you have the following installed on your system:
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 Vagrant Autocomplete Installation
 --------------------------------
-To enhance your Vagrant experience, you can install autocomplete for your shell. Follow the steps below:
 1. Open your terminal and validate the vagrant and virtual box installation by running:
    ```sh
    vagrant --version
@@ -20,6 +19,19 @@ To enhance your Vagrant experience, you can install autocomplete for your shell.
    vagrant autocomplete install
     ```
 3. Default vagrant ssh credential is: vagrant/vagrant [ Only for test env do not use in production ]
+4. To enhance your Vagrant experience, you can install autocomplete for your shell. Follow the steps below:
+    a. For Bash:
+        ```sh
+        vagrant autocomplete install --shell bash
+        ```
+    b. For Zsh:
+        ```sh
+        vagrant autocomplete install --shell zsh
+        ```
+    c. For Fish:
+        ```sh
+        vagrant autocomplete install --shell fish
+        ```
 
 Setting Up the Virtual Machine
 --------------------------------
