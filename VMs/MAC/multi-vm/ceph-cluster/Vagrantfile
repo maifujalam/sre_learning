@@ -8,8 +8,8 @@ CPU_MASTER = 4                          # Specify the CPU of master VM(Example :
 CPU_WORKER = 2                          # Specify CPU of each worker VMs(Example :-1,2)
 MEMORY_MASTER = 4096                    # Specify the RAM of master VMs in MB(Example :- 2048,4096)
 MEMORY_WORKER = 2048                 # Specify the RAM of each worker VMs in MB(Example :- 2048,4096)
-IP_MASTER = '192.168.0.10'
-IP_WORKER = ['192.168.0.11','192.168.0.12']
+IP_MASTER = '192.168.1.10'
+IP_WORKER = ['192.168.1.11','192.168.1.12']
 ADDITIONAL_DISK_COUNT_WORKER = 2
 ADDITIONAL_DISK_SIZE = "5GB"
 
@@ -33,6 +33,8 @@ Vagrant.configure("2") do |config|
             master.vm.box = IMAGE_NAME
             master.vm.box_version = BOX_VERSION
             master.vm.network "private_network", ip: IP_MASTER
+#           master.vm.network "public_network", ip: IP_MASTER ,bridge: "en0: Wi-Fi"
+#           master.vm.network "public_network", bridge: "en0: Wi-Fi"  # Its working as I received ip.
             master.vm.hostname = MASTER
             master.vm.provision "shell", inline: <<-SHELL
             echo "Provisioning worker VM #{i} IP Address: #{MASTER[i-1]}."
